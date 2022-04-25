@@ -10,7 +10,6 @@ import {
   Alert,
 } from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker'
-import { ThemeProvider } from 'react-native-elements'
 import * as Animatable from 'react-native-animatable'
 
 class Reservation extends Component {
@@ -94,9 +93,11 @@ class Reservation extends Component {
               onPress={() =>
                 Alert.alert(
                   'Begin Search?',
-                  `Number of Campers: ${this.state.campers} \n Hike-In? ${
-                    this.state.hikeIn ? 'Yes' : 'No'
-                  } \n Date: ${this.state.date.toLocaleDateString('en-us')}`,
+                  `Number of Campers: ${this.state.campers}` +
+                    '\n\n' +
+                    `Hike-In? ${this.state.hikeIn ? 'Yes' : 'No'}` +
+                    '\n\n' +
+                    `Date: ${this.state.date.toLocaleDateString('en-us')}`,
                   [
                     {
                       text: 'Cancel',
